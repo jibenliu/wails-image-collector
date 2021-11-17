@@ -1,0 +1,23 @@
+.el-header {
+    margin: 0 auto;
+    height: 300px;
+}
+
+#login-title {
+    height: 50px;
+    font-size: 32px;
+    line-height: 40px;
+    vertical-align: middle;
+    font-family: Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    color: red;
+}
+
+#login-logo {
+    height: 60px;
+    margin: 0 auto;
+}
+
+.el-main {
+    width: 800px;
+    margin: 40px auto 0;
+}

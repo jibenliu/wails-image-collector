@@ -1,0 +1,6 @@
+build
+frontend/node_modules
+.idea
+frontend/dist
+.DS_Store
+.git
