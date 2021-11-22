@@ -3,6 +3,7 @@ package main
 import (
   _ "embed"
   "github.com/wailsapp/wails"
+  "wails-image-collector/service"
 )
 
 func basic() string {
@@ -25,5 +26,6 @@ func main() {
     Colour: "#131313",
   })
   app.Bind(basic)
+  app.Bind(service.NewStruct())
   app.Run()
 }

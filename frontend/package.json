@@ -10,6 +10,7 @@
   "dependencies": {
     "@wailsapp/runtime": "^1.0.10",
     "core-js": "^3.6.4",
+    "deps": "^1.0.0",
     "element-ui": "^2.15.6",
     "regenerator-runtime": "^0.13.3",
     "vue": "^2.6.11",

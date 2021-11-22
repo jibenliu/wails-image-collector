@@ -9,6 +9,7 @@
       </el-row>
     </el-header>
     <el-main>
+      <h1>{{message}}</h1>
       <el-form ref="ruleForm" :model="ruleForm" :rules="rules" class="demo-ruleForm" label-width="100px" status-icon>
         <el-form-item label="邮箱地址：" prop="email">
           <el-input v-model="ruleForm.email" autocomplete="off" type="email"></el-input>
@@ -58,7 +59,7 @@ export default {
       }
     };
     return {
-      // message: " ",
+      message: " ",
       ruleForm: {
         pass: '',
         checkPass: '',

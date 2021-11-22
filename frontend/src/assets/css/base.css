@@ -1,3 +1,7 @@
+body {
+    background-color: beige;
+}
+
 .el-header {
     margin: 0 auto;
     height: 300px;
