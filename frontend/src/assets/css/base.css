@@ -21,6 +21,10 @@ body {
     margin: 0 auto;
 }
 
+.el-form-item{
+    text-align-last: justify;
+}
+
 .el-main {
     width: 800px;
     margin: 40px auto 0;

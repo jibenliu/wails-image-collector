@@ -3,6 +3,7 @@ package service
 import (
 	"fmt"
 	"github.com/wailsapp/wails"
+	"log"
 	"math/rand"
 )
 
@@ -42,11 +43,27 @@ func (s *MyStruct) AddUser(name string) error {
 	return nil
 }
 
-func (s *MyStruct) OpenFile() {
-	//selectedFile := runtime.Dialog.SelectFile("Select your profile picture", "*.jpg,*.png")
-	//s.log.Infof("I'm %s with the events that are currently unfolding", selectedFile)
+func (s *MyStruct) OpenFile() string {
+	selectedFile := s.runtime.Dialog.SelectFile("打开本地文件", "*.jpg,*.png,*.pdf")
+	log.Println(selectedFile)
+	s.log.Infof("I'm %s with the events that are currently unfolding", selectedFile)
+	return selectedFile
 }
 
 func (s *MyStruct) RandomValue() {
 	s.store.Set(rand.Intn(1000))
+}
+
+func (s *MyStruct) Hello(name string) string {
+	return fmt.Sprintf("Hello %s! My name is %s", name, s.Name)
+}
+
+func (s *MyStruct) Rename(name string) string {
+	s.Name = name
+	return fmt.Sprintf("My name is now '%s'", s.Name)
+}
+
+func (s *MyStruct) privateMethod(name string) string {
+	s.Name = name
+	return fmt.Sprintf("My name is now '%s'", s.Name)
 }
