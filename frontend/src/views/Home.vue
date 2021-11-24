@@ -20,7 +20,7 @@ declare global {
 }
 
 export default defineComponent({
-  name: "Home",
+  name: "HomePage",
   components: {
     HelloWorld,
   },
