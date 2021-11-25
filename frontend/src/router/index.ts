@@ -4,7 +4,6 @@ import About from '../views/About.vue'
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Upload from '../components/Upload.vue'
-import Sky from '../components/Sky.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,25 +21,20 @@ const routes: Array<RouteRecordRaw> = [
     component: About
   },
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: Login
   },
   {
-    path: '/',
+    path: '/register',
     name: 'Register',
     component: Register
   },
   {
-    path: '/',
+    path: '/upload',
     name: 'Upload',
     component: Upload
-  },
-  {
-    path: '/',
-    name: 'Sky',
-    component: Sky
-  },
+  }
 ]
 
 const router = createRouter({

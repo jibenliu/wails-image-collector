@@ -10,8 +10,6 @@
       <router-link to="/register">Register</router-link>
       |
       <router-link to="/upload">Upload</router-link>
-      |
-      <router-link to="/sky">Sky</router-link>
     </div>
     <router-view/>
   </div>
