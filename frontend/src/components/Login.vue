@@ -34,7 +34,10 @@
 @import "../assets/css/base.css";
 </style>
 <script>
-export default {
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  name: "LoginPage",
   data() {
     let validatePass = (rule, value, callback) => {
       if (value === '') {
@@ -72,14 +75,13 @@ export default {
       });
     },
     getMessage: function () {
-      let self = this;
       window.backend.basic().then(result => {
-        self.message = result;
+        this.message = result;
       });
     },
     register: function () {
       this.$router.push({path:'/register'})
     }
   }
-}
+});
 </script>

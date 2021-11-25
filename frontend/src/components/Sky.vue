@@ -5,13 +5,14 @@
 </template>
 
 <script>
-import * as THREE from './js/three.module.js';
-import {OrbitControls} from "./node_modules/three/examples/jsm/controls/OrbitControls.js";
-import {Water} from './node_modules/three/examples/jsm/objects/Water.js';
-import {Sky} from "./node_modules/three/examples/jsm/objects/Sky.js";
+import * as THREE from "three";
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls.js";
+import {Water} from 'three/examples/jsm/objects/Water.js';
+import {Sky} from "three/examples/jsm/objects/Sky.js";
+import {defineComponent} from "vue";
 
-export default {
-  name: "sky",
+export default defineComponent({
+  name: "SkyPage",
   data() {
     return {
       renderer: "",
@@ -141,16 +142,12 @@ export default {
       this.renderer.render(this.scene, this.camera);
     },
     mounted() {
-      //console.log(12);
       this.onload();
       this.run();
-      //console.log(this.waterMesh);
-
     },
   }
-}
+})
 </script>
 
 <style scoped>
-
 </style>

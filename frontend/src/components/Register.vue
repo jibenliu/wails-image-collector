@@ -39,7 +39,10 @@
 @import "../assets/css/base.css";
 </style>
 <script>
-export default {
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  name: "RegisterPage",
   data() {
     let validatePass = (rule, value, callback) => {
       if (value === '') {
@@ -89,15 +92,13 @@ export default {
       });
     },
     getMessage: function () {
-      let self = this;
       window.backend.basic().then(result => {
-        self.message = result;
+        this.message = result;
       });
     },
     getMyStruct: function () {
-      let self = this;
       window.backend.MyStruct.Hello("aaa").then(result => {
-        self.myStruct = result;
+        this.myStruct = result;
         console.log(result)
       });
     },
@@ -107,5 +108,5 @@ export default {
       })
     }
   }
-}
+})
 </script>
