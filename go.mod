@@ -2,7 +2,10 @@ module wails-vue3
 
 go 1.17
 
-require github.com/wailsapp/wails v1.16.8
+require (
+	github.com/sirupsen/logrus v1.8.1
+	github.com/wailsapp/wails v1.16.8
+)
 
 require (
 	github.com/Masterminds/semver v1.4.2 // indirect
@@ -21,7 +24,6 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/pkg/browser v0.0.0-20180916011732-0a3d74bf9ce4 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/syossan27/tebata v0.0.0-20180602121909-b283fe4bc5ba // indirect
 	golang.org/x/image v0.0.0-20200430140353-33d19683fad8 // indirect
 	golang.org/x/net v0.0.0-20200625001655-4c5254603344 // indirect

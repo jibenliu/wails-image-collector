@@ -3,8 +3,9 @@ package service
 import (
 	"fmt"
 	"github.com/wailsapp/wails"
-	"log"
+	"github.com/wailsapp/wails/lib/logger"
 	"math/rand"
+	"wails-vue3/service/tools/log"
 )
 
 type MyStruct struct {
@@ -23,9 +24,11 @@ func NewStruct() *MyStruct {
 }
 
 func (s *MyStruct) WailsInit(runtime *wails.Runtime) error {
-	// Save runtime
+	hook := log.NewHook("./wails.log")
+	logger.GlobalLogger.Hooks.Add(hook)
 	s.runtime = runtime
-	s.log = runtime.Log.New("MyStruct")
+	s.log = runtime.Log.New("MyStruct12412341241234")
+
 	// Do some other initialisation
 	s.store = runtime.Store.New("Counter", 0)
 	return nil
@@ -46,7 +49,6 @@ func (s *MyStruct) AddUser(name string) error {
 
 func (s *MyStruct) OpenFile() string {
 	selectedFile := s.runtime.Dialog.SelectFile("打开本地文件", "*.jpg,*.png,*.pdf")
-	log.Println(selectedFile)
 	s.log.Infof("I'm %s with the events that are currently unfolding", selectedFile)
 	return selectedFile
 }
@@ -70,6 +72,7 @@ func (s *MyStruct) privateMethod(name string) string {
 }
 
 func (s *MyStruct) StoreCount(num int) int {
+	s.log.Debug("1234123412341234")
 	s.store.Set(num)
 	fmt.Println(s.store.Get())
 	return s.Num
