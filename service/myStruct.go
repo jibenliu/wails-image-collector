@@ -9,6 +9,7 @@ import (
 
 type MyStruct struct {
 	Name string
+	Num int
 	runtime *wails.Runtime
 	log     *wails.CustomLogger
 	store   *wails.Store
@@ -66,4 +67,10 @@ func (s *MyStruct) Rename(name string) string {
 func (s *MyStruct) privateMethod(name string) string {
 	s.Name = name
 	return fmt.Sprintf("My name is now '%s'", s.Name)
+}
+
+func (s *MyStruct) StoreCount(num int) int {
+	s.store.Set(num)
+	fmt.Println(s.store.Get())
+	return s.Num
 }

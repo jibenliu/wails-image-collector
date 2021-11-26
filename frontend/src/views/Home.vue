@@ -3,24 +3,14 @@
     <img @click="getMessage" alt="Vue logo" src="../assets/appicon.png" :style="{ height: '400px' }"/>
     <h2 @click="getNetStatus">测试network</h2>
     <HelloWorld :msg="message" :netStatus="netStatus"/>
+    <h2 @click="storeCount">测试服务端存储数据</h2>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent, ref} from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-interface Backend {
-  basic(): Promise<string>;
-
-  NetWorkStatus(): Promise<boolean>;
-}
-
-declare global {
-  interface Window {
-    backend: Backend;
-  }
-}
+import StoreFrontend from "@/utils/store"; // @ is an alias to /src
 
 export default defineComponent({
   name: "HomePage",
@@ -28,7 +18,6 @@ export default defineComponent({
     HelloWorld,
   },
   setup() {
-
     const message = ref("Click the Icon");
     const netStatus = ref(false);
 
@@ -43,7 +32,11 @@ export default defineComponent({
         netStatus.value = result
       });
     }
-    return {message: message, netStatus: netStatus, getMessage: getMessage, getNetStatus: getNetStatus};
+
+    const storeCount = () => {
+      console.log(StoreFrontend(1))
+    }
+    return {message: message, netStatus: netStatus, getMessage: getMessage, getNetStatus: getNetStatus,storeCount:storeCount};
   },
 });
 </script>
